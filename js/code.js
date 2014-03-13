@@ -1,0 +1,37 @@
+$(function(){
+	$('#reg').validate({
+		rules:{
+			user:{
+				required:true,
+				minlength:2
+			},
+			email:{
+				email:true
+			},
+			url:{
+				url:true
+			},
+			number:{
+				number:true
+			},
+			repass:{
+				equalTo:'#pass'
+			},
+			min:{
+				min:5
+			},
+			range:{
+				range:[5,10]
+			},
+			rangelength:{
+				rangelength:[5,10]
+			}
+		},
+		messages:{
+			user:{
+				required:'账号不得为空!',
+				minlength:'账号不能小于2位!'
+			}
+		}
+	});
+});
