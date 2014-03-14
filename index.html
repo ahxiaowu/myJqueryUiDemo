@@ -5,6 +5,7 @@
 	<title>有问有答</title>
 	<script src="js/js/jquery.js"></script>
 	<script src="js/js/jqui.js"></script>
+	<script src="js/js/jquery.validate.js"></script>
 	<script src="js/index.js"></script>
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 	<link rel="stylesheet" href="js/css/smoothness/jquery-ui-1.10.3.custom.min.css">
@@ -27,20 +28,21 @@
 	</div>
 </div>
 
-<div id="reg" title="会员注册">
+<form id="reg" action="post.php" method="post" title="会员注册">
+	<ol class="reg_error"></ol>
 	<p>
 		<label for="user">账号:</label>
-		<input type="text" class="text" id="user" title="请输入账号,不少于2位!">
+		<input type="text" class="text" name="user" id="user">
 		<span class="star"> *</span>
 	</p>
 	<p>
 		<label for="pass">密码:</label>
-		<input type="text" class="text" id="pass" title="请输入密码,不少于6位!">
+		<input type="text" class="text" name="pass" id="pass">
 		<span class="star"> *</span>
 	</p>
 	<p>
 		<label for="email">邮箱:</label>
-		<input type="text" class="text" id="email" title="请输入正确的邮箱!">
+		<input type="text" class="text" name="email" id="email">
 		<span class="star"> *</span>
 	</p>	
 	<p>
@@ -52,7 +54,7 @@
 		<input type="text" class="text" id="date" readonly="readonly">
 		<span class="star"> *</span>		
 	</p>
-</div>
+</form>
 
 
 

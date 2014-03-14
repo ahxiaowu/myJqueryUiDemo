@@ -14970,7 +14970,7 @@ $.effects.effect.transfer = function( o, done ) {
 
 })(jQuery);
 
-/*jQuery(function($){
+jQuery(function($){
 	$.datepicker.regional['zh-CN'] = {
 		closeText: '关闭',
 		prevText: '&#x3C;上月',
@@ -14988,4 +14988,4 @@ $.effects.effect.transfer = function( o, done ) {
 		showMonthAfterYear: true,
 		yearSuffix: '年'};
 	$.datepicker.setDefaults($.datepicker.regional['zh-CN']);
-});*/
+});

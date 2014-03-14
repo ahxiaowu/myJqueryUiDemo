@@ -91,8 +91,21 @@ background:url(../img/ui_white.png);
 	color: #666;
 }
 #reg .star{
-	color: red;
+	color: maroon;
 	font-size: 14px;
+}
+#reg .succ{
+	display: inline-block;
+	width: 28px;
+	background: url(../img/reg_succ.png) no-repeat;
+}
+#reg ol{
+	margin: 0px;
+	padding: 0 0 0 20px;
+	color: maroon;
+}
+#reg ol li{
+	height: 20px;
 }
 #reg .text{
 	border-radius: 4px;
