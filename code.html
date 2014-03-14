@@ -6,9 +6,20 @@
 	<script src="js/js/jquery.js"></script>
 	<script src="js/js/jquery.validate.js"></script>
 	<script src="js/code.js"></script>
+	<style>
+	.myerror{color: red;}
+	.valid{
+		background: url(./img/reg_succ.png) no-repeat right;
+	}
+	.abc{
+		border: 5px solid green;
+	}
+	</style>
 </head>
 <body>
-<form action="123.html" id="reg">
+<form action="code.php" id="reg">
+	<p class="myerrorNum"></p>
+	<ol class="myerror"></ol>
 	<p>
 		账号:
 		<input type="text" name="user" id="user">
@@ -44,7 +55,11 @@
 	<p>
 		5-10之间的字符串
 		<input type="text" name="rangelength">
-	</p>		
+	</p>
+	<p>
+		邮政编码
+		<input type="text" name="zipcode" id="zipcode">
+	</p>				
 	<p>
 		<input type="submit" value="提交信息">
 	</p>
