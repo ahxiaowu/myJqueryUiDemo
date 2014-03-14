@@ -3,7 +3,8 @@ $(function(){
 		rules:{
 			user:{
 				required:true,
-				minlength:2
+				minlength:2,
+				rangelength:[5,10]
 			},
 			email:{
 				email:true
@@ -30,7 +31,8 @@ $(function(){
 		messages:{
 			user:{
 				required:'账号不得为空!',
-				minlength:'账号不能小于2位!'
+				minlength:jQuery.format('账号不能小于{0}位!'),
+				rangelength:jQuery.format('账号应该在{0}-{1}之间!')
 			}
 		}
 	});
