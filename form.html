@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form表单插件的使用</title>
+	<script src="js/js/jquery.js"></script>
+	<script src="js/js/jqui.js"></script>
+	<script src="js/js/jquery.validate.js"></script>
+	<script src="js/js/jquery.form.js"></script>
+	<script src="js/form.js"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="js/css/smoothness/jquery-ui-1.10.3.custom.min.css">
+</head>
+<body>
+<div id="box"></div>
+<form action="form.php" method="post" id="reg">
+	<p class="myerror"></p>
+	<p>
+		账号:
+		<input type="text" name="user" id="user">
+	</p>
+	<p>
+		密码:
+		<input type="text" name="pass" id="pass">
+	</p>
+	<p>
+		<input type="submit" value="提交信息">
+	</p>
+</form>
+</body>
+</html>
