@@ -1,6 +1,10 @@
 <?php 
+header('Content-Type:text/html;charset=UTF-8');
 
-echo 'form.php';
+
+sleep(3);
+
+echo $_POST['user'];
 
 
 

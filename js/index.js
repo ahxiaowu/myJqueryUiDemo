@@ -1,9 +1,19 @@
 $(function(){
 	$('#search_button').button();
+	$('#loading').dialog({
+		autoOpen:false,
+		modal:true,
+		closeOnEscape:false,
+		resizable:false,
+		draggable:false,
+		width:180,
+		height:50,
+	}).parent().parent().find('.ui-widget-header').hide();
+
 	$('#reg').buttonset(); //设置单选框
 	$('#reg').dialog({
 		title:'知问会员注册',
-		autoOpen:true,
+		autoOpen:false,
 		modal:true,
 		width:320,
 		height:320,
@@ -18,7 +28,29 @@ $(function(){
 		}	
 	}).validate({
 		submitHandler:function(form){
-			alert('验证成功,准备提交中...');
+			//alert('验证成功,准备提交中...');
+			$(form).ajaxSubmit({
+				url:'form.php',
+				type:'POST',
+				beforeSubmit:function(formData,jqForm,options){
+					//alert($('#reg').dialog('widget'));
+					$('#loading').dialog('open');
+					$('#reg').dialog('widget').find('button').eq(1).button('disable');
+				},
+				success:function(respText,statusText){
+					if(respText){
+						$('#reg').dialog('widget').find('button').eq(1).button('enable');
+						$('#loading').css('background','url(img/success.gif) no-repeat 20px center').html('数据新添成功!');
+						setTimeout(function(){
+							$('#reg').dialog('close');
+							$('#loading').dialog('close');
+							$('#reg').resetForm();
+							$('#reg span.star').html('*').removeClass('succ');
+							$('#loading').css('background','url(img/loading.gif) no-repeat 20px center').html('数据交互中...!');
+						},1000);
+					}
+				}
+			});
 		},
 		showErrors:function(errorMap,errorList){
 			var errorNum = this.numberOfInvalids();
@@ -32,6 +64,7 @@ $(function(){
 		},
 		highlight:function(element,errorClass){
 			$(element).css('border','1px solid #639');
+			$(element).parent().find('span').html('*').removeClass('succ');
 		},
 		unhighlight:function(element,errorClass){
 			$(element).css('border','1px solid #ccc');
